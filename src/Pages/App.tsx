@@ -3,31 +3,32 @@ import React, { useState } from 'react';
 import Form2 from '../components/Form2';
 import FullFlatList from '../components/FullFlatList';
 import StopWatch from '../components/StopWatch';
+import { IFlat } from '../types/flat';
 import "./styles.scss";
 
+//<Form setFlats={setFlat} /> esse é o Form do curso da Alura, estou continuando no meu.
 function App() {
-  const [flat, setFlat] = useState([
-    {
-      number: "101",
-      guest: "joselito",
-      guestId: "123",
-      time: "02:00:00"
-    },
-    {
-      number: "201",
-      guest: "ademara",
-      guestId: "456",
-      time: "03:00:00"
-    },
-  ]);
-  //{/*<Form setFlats={setFlat} />*/}
+  const [flats, setFlats] = useState<IFlat[]>([]);
+  const [select, setSelect] = useState<IFlat>();
+
+  function selectFlat(selectedFlat: IFlat) {
+    setSelect(selectedFlat);
+    setFlats(previousFlat => previousFlat.map(flat => ({
+      ...flat,
+      selected: flat.id === selectedFlat.id ? true : false,
+    })));
+  }
+
   return (
     <div className='AppStyle'>
       <Form2
-        flat={flat}
-        setFlats={setFlat}
+        flat={flats}
+        setFlats={setFlats}
       />
-      <FullFlatList flat={flat} />
+      <FullFlatList
+        flat={flats}
+        selectFlat={selectFlat}
+      />
       <StopWatch />
     </div>
   );

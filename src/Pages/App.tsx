@@ -29,7 +29,9 @@ function App() {
         flat={flats}
         selectFlat={selectFlat}
       />
-      <StopWatch />
+      <StopWatch
+        selected={select}
+      />
     </div>
   );
 }

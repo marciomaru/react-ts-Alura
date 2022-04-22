@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../Button";
+/*import Button from "../Button";
 import styles from './Form.module.scss';
 import { IFlat } from '../../types/flat';
 
@@ -89,4 +89,4 @@ class Form extends React.Component<{
     }
 }
 
-export default Form;
+export default Form;*/

@@ -2,7 +2,7 @@
   "name": "web",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://marciomaru.github.io/web",
+  "homepage": "react-ts-Alura/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

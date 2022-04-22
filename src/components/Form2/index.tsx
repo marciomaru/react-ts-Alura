@@ -33,7 +33,7 @@ export default function Form2({ flat, setFlats }: Props) {
         setNumber('');
         setGuest("");
         setGuestId('');
-        setTime('');
+        setTime('00:00:00');
     }
 
     function handleGuest(e: React.ChangeEvent<HTMLInputElement>) {

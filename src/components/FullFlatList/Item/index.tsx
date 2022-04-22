@@ -1,5 +1,5 @@
 import { IFlat } from '../../../types/flat';
-import styles from '../FullFlatList.module.scss';
+import styles from './Item.module.scss';
 
 interface Props extends IFlat {
     selectFlat: (selectedFlat: IFlat) => void;

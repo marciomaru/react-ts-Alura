@@ -1,3 +1,4 @@
+import React from 'react';
 import { IFlat } from '../../types/flat';
 import styles from './FullFlatList.module.scss';
 import Item from "./Item";

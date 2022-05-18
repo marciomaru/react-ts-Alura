@@ -17,8 +17,13 @@ function Item({
 }: Props) {
     return (
         <li
-            className={`${styles.item} ${selected ? styles.selectedItem : ''}`}
-            onClick={() => selectFlat(
+            className={
+                `
+                    ${styles.item} ${selected ? styles.selectedItem : ''}
+                    ${completed ? styles.completedItem : ''}
+                `
+            }
+            onClick={() => !completed && selectFlat(
                 {
                     number,
                     guest,
@@ -35,6 +40,14 @@ function Item({
             <div>{guest}</div>
             <div>{guestId}</div>
             <div>{time}</div>
+            {
+                completed &&
+                <span
+                    className={styles.concluded}
+                    aria-label='item completado'
+                >
+                </span>
+            }
         </li>
     )
 }

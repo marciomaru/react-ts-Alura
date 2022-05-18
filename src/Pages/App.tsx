@@ -19,6 +19,21 @@ function App() {
     })));
   }
 
+  function finishFlat() {
+    if (select) {
+      setSelect(undefined);
+      setFlats(previousFlat => previousFlat.map(flat => {
+        if (flat.id === select.id) {
+          return {
+            ...flat,
+            selected: false,
+            completed: true,
+          }
+        }
+        return flat;
+      }))
+    }
+  }
   return (
     <div className='AppStyle'>
       <Form2
@@ -31,9 +46,11 @@ function App() {
       />
       <StopWatch
         selected={select}
+        finishFlat={finishFlat}
       />
     </div>
   );
 }
+
 
 export default App
